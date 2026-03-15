@@ -1,0 +1,135 @@
+.item {
+  list-style: none;
+  border: 1px solid var(--color-border, #333);
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  background: var(--color-surface, #1e1f27);
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rerollColor {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.item:hover .rerollColor {
+  opacity: 1;
+}
+
+.rerollColor:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.reorder {
+  display: flex;
+  flex-direction: column;
+}
+
+.reorder button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.4;
+  font-size: 0.75rem;
+  /* 44px min touch target */
+  min-width: 44px;
+  min-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reorder button:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.reorder button:disabled {
+  opacity: 0.15;
+  cursor: default;
+}
+
+.name {
+  flex: 1;
+  cursor: text;
+  font-size: 0.95rem;
+}
+
+.name:hover {
+  text-decoration: underline dotted;
+}
+
+.nameInput {
+  flex: 1;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--color-accent, #aa3bff);
+  border-radius: 4px;
+  background: var(--color-surface, #1e1f27);
+  color: inherit;
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggleTags {
+  background: none;
+  border: 1px solid var(--color-border, #333);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.toggleTags:hover {
+  border-color: var(--color-accent, #aa3bff);
+}
+
+.remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.45;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.remove:hover {
+  opacity: 1;
+}

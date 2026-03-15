@@ -1,0 +1,38 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.75rem;
+  padding-bottom: calc(0.625rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+
+.endButton,
+.undoButton {
+  flex: 0 0 72px;
+  height: 52px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.endButton {
+  background: hsl(0, 60%, 45%);
+}
+
+.undoButton {
+  background: hsl(220, 25%, 35%);
+}
+
+.timer {
+  flex: 1;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-h);
+  letter-spacing: 0.04em;
+}

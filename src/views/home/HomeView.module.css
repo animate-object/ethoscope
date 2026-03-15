@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 16px;
+  padding: 48px 24px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: var(--text-h);
+  margin: 0 0 24px;
+}
+
+.navItem {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px 32px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.navItem:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.navItemTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-h);
+  margin: 0 0 4px;
+}
+
+.navItemDescription {
+  font-size: 14px;
+  color: var(--text);
+  margin: 0;
+}

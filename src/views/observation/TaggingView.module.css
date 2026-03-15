@@ -1,0 +1,98 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  gap: 0.625rem;
+}
+
+.header {
+  padding: 0.5rem 0.25rem 0.25rem;
+  flex-shrink: 0;
+}
+
+.behaviorLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tags {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  overflow-y: auto;
+}
+
+.tagButton {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 72px;
+  transition: transform 0.08s ease, filter 0.08s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tagButton:active {
+  transform: scale(0.97);
+  filter: brightness(0.9);
+}
+
+.tagName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.625rem;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.3rem;
+}
+
+.cancelButton {
+  flex-shrink: 0;
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  transition: border-color 0.15s, background 0.15s;
+  min-height: 56px;
+  touch-action: manipulation;
+}
+
+.cancelButton:active {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+}
