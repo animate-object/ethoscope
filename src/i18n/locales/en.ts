@@ -10,6 +10,8 @@ const en = {
       startObservationDescription: 'Begin recording a live behavioral observation',
       analyzeSessions: 'Analyze Past Sessions',
       analyzeSessionsDescription: 'Review and interpret recorded session data',
+      installApp: 'Add to Home Screen',
+      installAppDescription: 'Install Ethoscope for quick access',
     },
   },
   behaviorSchemaList: {

@@ -22,8 +22,8 @@ export default defineConfig({
         description: 'Behavioral observation and analysis tool',
         theme_color: '#aa3bff',
         background_color: '#16171d',
-        display: 'standalone',
-        start_url: '/',
+        display: 'fullscreen',
+        start_url: '/ethoscope/',
         icons: [
           {
             src: '/icons/pwa-192.png',

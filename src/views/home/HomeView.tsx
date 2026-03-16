@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { listSchemas } from '@/lib/schema/repository';
 import { ROUTES } from '@/routes';
+import { usePWAInstall } from '@/hooks/usePWAInstall';
 import styles from './HomeView.module.css';
 
 type NavItemProps = {
@@ -24,6 +25,7 @@ export function HomeView() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [hasSchemas, setHasSchemas] = useState(false);
+  const { showInstallButton, install } = usePWAInstall();
 
   useEffect(() => {
     setHasSchemas(listSchemas().length > 0);
@@ -56,6 +58,13 @@ export function HomeView() {
         description={t('home.nav.analyzeSessionsDescription')}
         onClick={() => navigate(ROUTES.analysis)}
       />
+      {showInstallButton && (
+        <NavItem
+          title={t('home.nav.installApp')}
+          description={t('home.nav.installAppDescription')}
+          onClick={install}
+        />
+      )}
     </main>
   );
 }
