@@ -7,6 +7,8 @@ export interface ObservationEntry {
 export interface ObservationSession {
   id: string
   schemaId: string
+  schemaVersion: number
+  timezone: string
   startedAt: ISODateString
   endedAt?: ISODateString
   observations: ObservationEntry[]

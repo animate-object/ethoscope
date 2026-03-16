@@ -7,6 +7,8 @@ export function useObservationSession(schema: BehaviorSchemaRecord) {
   // Stable identity for this session — created once on mount.
   const sessionId = useRef(crypto.randomUUID()).current
   const startedAt = useRef(new Date().toISOString() as ISODateString).current
+  const schemaVersion = useRef(schema.version.absolute).current
+  const timezone = useRef(Intl.DateTimeFormat().resolvedOptions().timeZone).current
   const isEndedRef = useRef(false)
 
   const [observations, setObservations] = useState<ObservationEntry[]>([])
@@ -25,6 +27,8 @@ export function useObservationSession(schema: BehaviorSchemaRecord) {
         saveSession({
           id: sessionId,
           schemaId,
+          schemaVersion,
+          timezone,
           startedAt,
           observations: observationsRef.current,
         })
@@ -83,13 +87,15 @@ export function useObservationSession(schema: BehaviorSchemaRecord) {
     const session: ObservationSession = {
       id: sessionId,
       schemaId: schema.name.id,
+      schemaVersion,
+      timezone,
       startedAt,
       endedAt: new Date().toISOString() as ISODateString,
       observations: observationsRef.current,
     }
     saveSession(session)
     return session
-  }, [schema.name.id, sessionId, startedAt])
+  }, [schema.name.id, schemaVersion, timezone, sessionId, startedAt])
 
   return {
     observations,

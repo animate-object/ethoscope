@@ -58,6 +58,11 @@ export function HomeView() {
         description={t('home.nav.analyzeSessionsDescription')}
         onClick={() => navigate(ROUTES.analysis)}
       />
+      <NavItem
+        title={t('home.nav.options')}
+        description={t('home.nav.optionsDescription')}
+        onClick={() => navigate(ROUTES.options)}
+      />
       {showInstallButton && (
         <NavItem
           title={t('home.nav.installApp')}

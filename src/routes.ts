@@ -7,6 +7,7 @@ export const ROUTES = {
   observationSession: (schemaId: string) => `/observation/${schemaId}`,
   observationComplete: '/observation/complete',
   analysis: '/analysis',
+  options: '/options',
 } as const
 
 /** Where to navigate after a session ends. Edit here to change post-session flow. */

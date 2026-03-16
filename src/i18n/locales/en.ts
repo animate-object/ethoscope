@@ -12,6 +12,8 @@ const en = {
       analyzeSessionsDescription: 'Review and interpret recorded session data',
       installApp: 'Add to Home Screen',
       installAppDescription: 'Install Ethoscope for quick access',
+      options: 'Options',
+      optionsDescription: 'Import and export data for testing and device transfer',
     },
   },
   behaviorSchemaList: {

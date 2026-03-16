@@ -6,6 +6,7 @@ import { ObservationNewView } from './views/observation/ObservationNewView';
 import { ObservationView } from './views/observation/ObservationView';
 import { SessionCompleteView } from './views/observation/SessionCompleteView';
 import { AnalysisView } from './views/analysis/AnalysisView';
+import { OptionsView } from './views/options/OptionsView';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/observation/complete" element={<SessionCompleteView />} />
         <Route path="/observation/:schemaId" element={<ObservationView />} />
         <Route path="/analysis" element={<AnalysisView />} />
+        <Route path="/options" element={<OptionsView />} />
       </Routes>
     </BrowserRouter>
   );
