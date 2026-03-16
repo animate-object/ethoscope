@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages SPA redirect — saves the full URL to sessionStorage then
+      // redirects to index.html, which restores it via history.replaceState.
+      sessionStorage.redirect = location.href;
+      location.replace('/ethoscope/');
+    </script>
+  </head>
+  <body></body>
+</html>

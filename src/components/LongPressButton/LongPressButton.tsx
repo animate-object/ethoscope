@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { type CSSProperties, type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
 import styles from './LongPressButton.module.css'
 

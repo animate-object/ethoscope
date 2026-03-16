@@ -4,6 +4,8 @@ A tool for amateur ethologists to record field observations of animals — what'
 
 The core goal is to ease the burden of data capture so the observer can stay focused on observing, by providing a purpose-built interface for every step of the workflow.
 
+### [Try It!](https://animate-object.github.io/ethoscope/)
+
 ## Features \[in development\]
 
 - **Behavioral schema definition** — define the set of behaviors to track for a given subject or study

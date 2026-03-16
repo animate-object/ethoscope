@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react'
+import { type FormEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { MAX_EVENTS, type KnownSchemaEvents } from '../../lib/schema/types'
 import { Button } from '@/components/ui/button'

@@ -9,7 +9,7 @@ import { AnalysisView } from './views/analysis/AnalysisView';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ethoscope/">
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/behavior-schemas" element={<BehaviorSchemaListView />} />

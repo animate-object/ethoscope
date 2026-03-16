@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react'
+import { type FormEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { tagColor } from '../../lib/color'
 import { MAX_TAGS, type SimpleUserDefinedSchemaValue } from '../../lib/schema/types'
