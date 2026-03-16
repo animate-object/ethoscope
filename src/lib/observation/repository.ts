@@ -30,3 +30,15 @@ export function listSessions(): ObservationSession[] {
     (a, b) => new Date(b.startedAt).getTime() - new Date(a.startedAt).getTime(),
   )
 }
+
+export function deleteSessionsBySchemaId(schemaId: string): void {
+  const store = readStore()
+  for (const id of Object.keys(store)) {
+    if (store[id].schemaId === schemaId) delete store[id]
+  }
+  writeStore(store)
+}
+
+export function countSessionsBySchemaId(schemaId: string): number {
+  return Object.values(readStore()).filter(s => s.schemaId === schemaId).length
+}

@@ -18,6 +18,12 @@ const en = {
   },
   behaviorSchemaList: {
     title: 'Behavior Schemas',
+    deleteModal: {
+      title: 'Delete Schema',
+      body: 'This will permanently delete <strong>{{name}}</strong> and all <strong>{{count}}</strong> associated {{count, plural, one {session} other {sessions}}.',
+      confirm: 'Hold to delete',
+      cancel: 'Cancel',
+    },
   },
   behaviorSchema: {
     title: 'New Behavior Schema',

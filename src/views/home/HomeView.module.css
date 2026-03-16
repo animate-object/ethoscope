@@ -58,3 +58,23 @@
   pointer-events: none;
   user-select: none;
 }
+
+.settingsButton {
+  position: fixed;
+  bottom: 8px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  opacity: 0.4;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s;
+}
+
+.settingsButton:hover {
+  opacity: 0.8;
+}

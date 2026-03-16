@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { Settings } from 'lucide-react'
 import { listSchemas } from '@/lib/schema/repository'
 import { ROUTES } from '@/routes'
 import { usePWAInstall } from '@/hooks/usePWAInstall'
@@ -58,11 +59,6 @@ export function HomeView() {
         description={t('home.nav.analyzeSessionsDescription')}
         onClick={() => navigate(ROUTES.analysis)}
       />
-      <NavItem
-        title={t('home.nav.options')}
-        description={t('home.nav.optionsDescription')}
-        onClick={() => navigate(ROUTES.options)}
-      />
       {showInstallButton && (
         <NavItem
           title={t('home.nav.installApp')}
@@ -77,6 +73,9 @@ export function HomeView() {
           timeStyle: 'short',
         })}
       </span>
+      <button className={styles.settingsButton} onClick={() => navigate(ROUTES.options)} aria-label="Options">
+        <Settings size={20} />
+      </button>
     </main>
   )
 }
