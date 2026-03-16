@@ -1,0 +1,88 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.sectionDescription {
+  font-size: 0.875rem;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.cardBody {
+  padding: 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.cardDescription {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cardFooter {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--accent-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.runButton {
+  align-self: flex-start;
+  padding: 0.4rem 1rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-h);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.runButton:hover,
+.runButton:focus-visible {
+  border-color: var(--accent-border);
+  background: var(--bg);
+  outline: none;
+}
+
+.resultSuccess {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.resultError {
+  font-size: 0.8rem;
+  color: var(--destructive, #e05c5c);
+  margin: 0;
+}

@@ -8,6 +8,7 @@ export const ROUTES = {
   observationComplete: '/observation/complete',
   analysis: '/analysis',
   options: '/options',
+  devTools: '/options/dev-tools',
 } as const
 
 /** Where to navigate after a session ends. Edit here to change post-session flow. */
