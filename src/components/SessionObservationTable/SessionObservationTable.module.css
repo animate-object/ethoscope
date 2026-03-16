@@ -1,0 +1,81 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.nameCol {
+  text-align: left;
+  padding: 0 0.5rem 0.5rem 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.numCol {
+  text-align: right;
+  padding: 0 0 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.behaviorRow {
+  border-top: 1px solid var(--border);
+}
+
+.behaviorRow:first-of-type {
+  border-top: none;
+}
+
+.tagRow + .behaviorRow {
+  border-top: 1px solid var(--border);
+}
+
+.nameCell {
+  padding: 0.6rem 0.5rem 0.6rem 0;
+  color: var(--text-h);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.numCell {
+  padding: 0.6rem 0 0.6rem 1rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-h);
+  white-space: nowrap;
+}
+
+.tagRow .nameCell {
+  color: var(--text);
+}
+
+.tagRow .numCell {
+  color: var(--text);
+}
+
+.swatch {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tagIndent {
+  display: inline-block;
+  width: 1rem;
+  flex-shrink: 0;
+}

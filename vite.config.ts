@@ -8,6 +8,9 @@ import { execSync } from 'child_process'
 const commitDate = execSync('git log -1 --format=%cI').toString().trim()
 
 export default defineConfig({
+  optimizeDeps: {
+    include: ['react-is'],
+  },
   define: {
     __COMMIT_DATE__: JSON.stringify(commitDate),
   },

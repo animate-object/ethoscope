@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-h);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

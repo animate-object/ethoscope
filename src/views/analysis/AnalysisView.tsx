@@ -1,30 +1,13 @@
-import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Screen } from '@/components/Screen'
 import { listSessions } from '@/lib/observation/repository'
 import { loadSchema } from '@/lib/schema/repository'
-import type { ObservationSession } from '@/lib/observation/types'
+import { ROUTES } from '@/routes'
 import styles from './AnalysisView.module.css'
 
 export function AnalysisView() {
+  const navigate = useNavigate()
   const sessions = listSessions()
-  const [selected, setSelected] = useState<ObservationSession | null>(null)
-
-  if (selected) {
-    return (
-      <Screen title="Session Data">
-        <div className={styles.detailHeader}>
-          <button
-            type="button"
-            className={styles.backButton}
-            onClick={() => setSelected(null)}
-          >
-            ← Back
-          </button>
-        </div>
-        <pre className={styles.json}>{JSON.stringify(selected, null, 2)}</pre>
-      </Screen>
-    )
-  }
 
   return (
     <Screen title="Analysis" backTo="/">
@@ -40,7 +23,7 @@ export function AnalysisView() {
                 <button
                   type="button"
                   className={styles.sessionItem}
-                  onClick={() => setSelected(session)}
+                  onClick={() => navigate(ROUTES.analysisSession(session.id))}
                 >
                   <span className={styles.sessionName}>
                     {schema?.name.name ?? 'Unknown schema'}

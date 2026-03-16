@@ -7,6 +7,7 @@ export const ROUTES = {
   observationSession: (schemaId: string) => `/observation/${schemaId}`,
   observationComplete: '/observation/complete',
   analysis: '/analysis',
+  analysisSession: (id: string) => `/analysis/session/${id}`,
   options: '/options',
   devTools: '/options/dev-tools',
 } as const

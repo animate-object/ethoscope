@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomeView } from './views/home/HomeView';
 import { BehaviorSchemaListView } from './views/behaviorSchema/BehaviorSchemaListView';
@@ -9,9 +10,14 @@ import { AnalysisView } from './views/analysis/AnalysisView';
 import { OptionsView } from './views/options/OptionsView';
 import { DevToolsView } from './views/options/DevToolsView';
 
+const SessionDetailView = lazy(() =>
+  import('./views/analysis/SessionDetailView').then(m => ({ default: m.SessionDetailView }))
+);
+
 function App() {
   return (
     <BrowserRouter basename="/ethoscope/">
+      <Suspense>
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/behavior-schemas" element={<BehaviorSchemaListView />} />
@@ -22,9 +28,11 @@ function App() {
         <Route path="/observation/complete" element={<SessionCompleteView />} />
         <Route path="/observation/:schemaId" element={<ObservationView />} />
         <Route path="/analysis" element={<AnalysisView />} />
+        <Route path="/analysis/session/:id" element={<SessionDetailView />} />
         <Route path="/options" element={<OptionsView />} />
         <Route path="/options/dev-tools" element={<DevToolsView />} />
       </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
