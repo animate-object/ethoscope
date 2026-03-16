@@ -18,3 +18,5 @@ type Brand<T, B extends string> = T & { readonly __brand: B }
 
 // Timestamp convention: all timestamps are ISO 8601 strings in UTC unless explicitly noted otherwise.
 type ISODateString = Brand<string, 'ISODateString'>
+
+declare const __COMMIT_DATE__: string

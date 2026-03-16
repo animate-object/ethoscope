@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { listSchemas } from '@/lib/schema/repository';
-import { ROUTES } from '@/routes';
-import { usePWAInstall } from '@/hooks/usePWAInstall';
-import styles from './HomeView.module.css';
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { listSchemas } from '@/lib/schema/repository'
+import { ROUTES } from '@/routes'
+import { usePWAInstall } from '@/hooks/usePWAInstall'
+import styles from './HomeView.module.css'
 
 type NavItemProps = {
-  title: string;
-  description: string;
-  onClick: () => void;
-};
+  title: string
+  description: string
+  onClick: () => void
+}
 
 function NavItem({ title, description, onClick }: NavItemProps) {
   return (
@@ -18,18 +18,18 @@ function NavItem({ title, description, onClick }: NavItemProps) {
       <p className={styles.navItemTitle}>{title}</p>
       <p className={styles.navItemDescription}>{description}</p>
     </button>
-  );
+  )
 }
 
 export function HomeView() {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-  const [hasSchemas, setHasSchemas] = useState(false);
-  const { showInstallButton, install } = usePWAInstall();
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const [hasSchemas, setHasSchemas] = useState(false)
+  const { showInstallButton, install } = usePWAInstall()
 
   useEffect(() => {
-    setHasSchemas(listSchemas().length > 0);
-  }, []);
+    setHasSchemas(listSchemas().length > 0)
+  }, [])
 
   return (
     <main className={styles.container}>
@@ -65,6 +65,13 @@ export function HomeView() {
           onClick={install}
         />
       )}
+      <span className={styles.version}>
+        Build date:{' '}
+        {new Date(__COMMIT_DATE__).toLocaleString(undefined, {
+          dateStyle: 'short',
+          timeStyle: 'short',
+        })}
+      </span>
     </main>
-  );
+  )
 }
