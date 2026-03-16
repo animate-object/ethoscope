@@ -21,7 +21,8 @@ export function SessionObservationTable({ rollup }: Props) {
         <tr>
           <th className={styles.nameCol}>Behavior</th>
           <th className={styles.numCol}>Count</th>
-          <th className={styles.numCol}>%</th>
+          <th className={styles.numCol}>% total</th>
+          <th className={styles.numCol}>% cat.</th>
         </tr>
       </thead>
       <tbody>
@@ -37,6 +38,7 @@ export function SessionObservationTable({ rollup }: Props) {
               </td>
               <td className={styles.numCell}>{b.count}</td>
               <td className={styles.numCell}>{pct(b.count, totalObservations)}</td>
+              <td className={styles.numCell} />
             </tr>
 
             {b.tags.map(t => (
@@ -51,6 +53,7 @@ export function SessionObservationTable({ rollup }: Props) {
                 </td>
                 <td className={styles.numCell}>{t.count}</td>
                 <td className={styles.numCell}>{pct(t.count, totalObservations)}</td>
+                <td className={styles.numCell}>{pct(t.count, b.count)}</td>
               </tr>
             ))}
           </>
